@@ -16,6 +16,8 @@ interface OrderForm {
 export default function CosPage() {
   const { items, getCartProducts, getSubtotal, updateQuantity, removeItem, clearCart } = useCartStore()
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [form, setForm] = useState<OrderForm>({
     nume: '',
     telefon: '',
@@ -33,25 +35,45 @@ export default function CosPage() {
     setForm((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setIsSubmitting(true)
+    setError(null)
 
     const orderData = {
-      customer: form,
+      name: form.nume,
+      phone: form.telefon,
+      email: form.email,
+      address: form.adresa,
+      notes: form.observatii,
       items: cartProducts.map(({ product, quantity }) => ({
-        productId: product?.id,
         name: product?.name,
-        price: product?.price,
         quantity,
+        price: product?.price,
       })),
       total: subtotal,
-      createdAt: new Date().toISOString(),
     }
 
-    console.log('📦 Comandă nouă:', orderData)
-    
-    clearCart()
-    setIsSubmitted(true)
+    try {
+      const response = await fetch('https://doro-store-orders.dorobantu29.workers.dev', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Eroare la trimiterea comenzii')
+      }
+
+      clearCart()
+      setIsSubmitted(true)
+    } catch (err) {
+      setError('Nu am putut trimite comanda. Te rugăm să încerci din nou sau să ne contactezi telefonic.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
@@ -273,11 +295,18 @@ export default function CosPage() {
                 </div>
               </div>
 
+              {error && (
+                <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                  {error}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full mt-6 bg-primary-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                disabled={isSubmitting}
+                className="w-full mt-6 bg-primary-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Trimite comanda
+                {isSubmitting ? 'Se trimite...' : 'Trimite comanda'}
               </button>
 
               <p className="text-xs text-gray-500 text-center mt-4">
