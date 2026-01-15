@@ -36,7 +36,7 @@ Magnetul N52 folosit este de 6 ori mai puternic decât magneții standard din su
     categoryId: 'accesorii-auto',
     subcategoryId: 'suporturi-telefon',
     images: [
-      { url: 'https://picsum.photos/seed/product1/600', alt: 'Suport telefon auto magnetic montat pe grilă', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1598986646512-9330bcc4c0dc?w=600&h=600&fit=crop', alt: 'Suport telefon auto magnetic montat pe grilă', isPrimary: true },
     ],
     specs: [
       { label: 'Material', value: 'Aliaj aluminiu + silicon' },
@@ -87,7 +87,7 @@ Adaptorul de priză NU este inclus. Folosește un adaptor de minim 18W pentru î
     categoryId: 'gadgeturi',
     subcategoryId: 'incarcatoare-wireless',
     images: [
-      { url: 'https://picsum.photos/seed/product2/600', alt: 'Încărcător wireless pe birou', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1622675363311-3e1904dc1885?w=600&h=600&fit=crop', alt: 'Încărcător wireless pe birou', isPrimary: true },
     ],
     specs: [
       { label: 'Putere maximă', value: '15W' },
@@ -132,7 +132,7 @@ Când nu îl folosești, se pliază plat în câteva secunde și ocupă doar 3 c
     categoryId: 'accesorii-auto',
     subcategoryId: 'organizatoare-auto',
     images: [
-      { url: 'https://picsum.photos/seed/product3/600', alt: 'Organizator portbagaj în mașină', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop', alt: 'Organizator portbagaj în mașină', isPrimary: true },
     ],
     specs: [
       { label: 'Dimensiuni deschis', value: '60 x 35 x 30 cm' },
@@ -179,7 +179,7 @@ Bateria reîncărcabilă ține până la 3 luni în mod senzor, iar încărcarea
     categoryId: 'accesorii-casa',
     subcategoryId: 'iluminat-decorativ',
     images: [
-      { url: 'https://picsum.photos/seed/product4/600', alt: 'Lampă LED în dulap', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&h=600&fit=crop', alt: 'Lampă LED în dulap', isPrimary: true },
     ],
     specs: [
       { label: 'Sursă lumină', value: '20 LED-uri' },
@@ -229,7 +229,7 @@ Set-ul include forme variate — pătrate, triunghiuri, hexagoane — pentru pos
     categoryId: 'jucarii',
     subcategoryId: 'jucarii-educative',
     images: [
-      { url: 'https://picsum.photos/seed/product5/600', alt: 'Cuburi magnetice construcție', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&h=600&fit=crop', alt: 'Cuburi magnetice construcție', isPrimary: true },
     ],
     specs: [
       { label: 'Număr piese', value: '64' },
@@ -274,7 +274,7 @@ Suportul reglabil ridică ecranul laptopului la nivelul ochilor, reducând tensi
     categoryId: 'gadgeturi',
     subcategoryId: 'electronice-utile',
     images: [
-      { url: 'https://picsum.photos/seed/product6/600', alt: 'Suport laptop pe birou', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&h=600&fit=crop', alt: 'Suport laptop pe birou', isPrimary: true },
     ],
     specs: [
       { label: 'Material', value: 'Aliaj aluminiu' },
@@ -320,7 +320,7 @@ Transparente pentru a vedea conținutul fără să deschizi.
     categoryId: 'accesorii-casa',
     subcategoryId: 'bucatarie',
     images: [
-      { url: 'https://picsum.photos/seed/product7/600', alt: 'Recipiente depozitare în bucătărie', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&h=600&fit=crop', alt: 'Recipiente depozitare în bucătărie', isPrimary: true },
     ],
     specs: [
       { label: 'Capacități', value: '0.8L + 1.4L + 2L' },
@@ -367,7 +367,7 @@ Telecomanda funcționează de la distanță de până la 30 de metri.
     categoryId: 'jucarii',
     subcategoryId: 'jucarii-interactive',
     images: [
-      { url: 'https://picsum.photos/seed/product8/600', alt: 'Mașinuță telecomandată off-road', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=600&h=600&fit=crop', alt: 'Mașinuță telecomandată off-road', isPrimary: true },
     ],
     specs: [
       { label: 'Dimensiuni', value: '28 x 18 x 15 cm' },
@@ -412,7 +412,7 @@ Organizatorul combină depozitarea pentru accesorii de birou cu o stație de în
     categoryId: 'gadgeturi',
     subcategoryId: 'electronice-utile',
     images: [
-      { url: 'https://picsum.photos/seed/product9/600', alt: 'Organizator birou cu încărcare wireless', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&h=600&fit=crop', alt: 'Organizator birou cu încărcare wireless', isPrimary: true },
     ],
     specs: [
       { label: 'Dimensiuni', value: '22 x 12 x 10 cm' },
@@ -457,7 +457,7 @@ Material din silicon moale, sigur de atins și nu se sparge dacă cade.
     categoryId: 'jucarii',
     subcategoryId: 'jucarii-educative',
     images: [
-      { url: 'https://picsum.photos/seed/product10/600', alt: 'Lumină de noapte pentru copii', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=600&h=600&fit=crop', alt: 'Lumină de noapte pentru copii', isPrimary: true },
     ],
     specs: [
       { label: 'Dimensiuni', value: '12 x 12 x 10 cm' },
@@ -503,7 +503,7 @@ Oțel inoxidabil 304 — nu ruginesc, potrivite și pentru baie.
     categoryId: 'accesorii-casa',
     subcategoryId: 'organizare',
     images: [
-      { url: 'https://picsum.photos/seed/product11/600', alt: 'Cuiere autoadezive pe perete', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=600&h=600&fit=crop', alt: 'Cuiere autoadezive pe perete', isPrimary: true },
     ],
     specs: [
       { label: 'Material', value: 'Oțel inoxidabil 304' },
@@ -547,7 +547,7 @@ Lungimea de 2 metri îți permite să folosești telefonul în timp ce se încar
     categoryId: 'gadgeturi',
     subcategoryId: 'accesorii-telefon',
     images: [
-      { url: 'https://picsum.photos/seed/product12/600', alt: 'Cablu USB-C împletit', isPrimary: true },
+      { url: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&h=600&fit=crop', alt: 'Cablu USB-C împletit', isPrimary: true },
     ],
     specs: [
       { label: 'Lungime', value: '2 metri' },

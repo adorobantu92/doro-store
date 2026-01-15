@@ -13,6 +13,7 @@ import { formatPrice, calculateDiscount } from '@/lib/utils'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { ProductCard } from '@/components/product/ProductCard'
 import { AddToCartButton } from '@/components/product/AddToCartButton'
+import { ProductTabs } from '@/components/product/ProductTabs'
 import { Truck, RotateCcw, CreditCard, FileText, Check } from 'lucide-react'
 
 interface ProductPageProps {
@@ -251,71 +252,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
 
         {/* Product Details Tabs */}
-        <div className="mb-16">
-          <div className="border-b border-secondary-200">
-            <nav className="flex gap-8">
-              <button className="py-4 border-b-2 border-primary-600 text-primary-600 font-medium">
-                Descriere
-              </button>
-              <button className="py-4 border-b-2 border-transparent text-secondary-600 hover:text-secondary-900">
-                Specificații
-              </button>
-              <button className="py-4 border-b-2 border-transparent text-secondary-600 hover:text-secondary-900">
-                Livrare și Retur
-              </button>
-            </nav>
-          </div>
-
-          <div className="py-8">
-            {/* Benefits */}
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold text-secondary-900 mb-4">
-                Caracteristici principale
-              </h3>
-              <ul className="space-y-2">
-                {product.benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-secondary-700">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Description */}
-            <div className="prose-product max-w-none">
-              <div dangerouslySetInnerHTML={{ __html: product.description.replace(/\n/g, '<br />') }} />
-            </div>
-
-            {/* Specs Table */}
-            {product.specs.length > 0 && (
-              <div className="mt-8">
-                <h3 className="text-lg font-semibold text-secondary-900 mb-4">
-                  Specificații tehnice
-                </h3>
-                <div className="border rounded-lg overflow-hidden">
-                  <table className="w-full">
-                    <tbody>
-                      {product.specs.map((spec, index) => (
-                        <tr
-                          key={index}
-                          className={index % 2 === 0 ? 'bg-secondary-50' : 'bg-white'}
-                        >
-                          <td className="px-4 py-3 text-sm font-medium text-secondary-700 w-1/3">
-                            {spec.label}
-                          </td>
-                          <td className="px-4 py-3 text-sm text-secondary-900">
-                            {spec.value}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
+        <ProductTabs
+          description={product.description}
+          benefits={product.benefits}
+          specs={product.specs}
+        />
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (

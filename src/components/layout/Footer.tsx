@@ -161,6 +161,18 @@ export function Footer() {
               </a>
             </div>
           </div>
+          
+          {/* DoroLabs Credit */}
+          <div className="mt-4 pt-4 border-t border-secondary-800 text-center">
+            <a
+              href="https://dorolabs.eu/ro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-secondary-600 hover:text-secondary-500 transition-colors"
+            >
+              Technology by DoroLabs
+            </a>
+          </div>
         </div>
       </div>
     </footer>
