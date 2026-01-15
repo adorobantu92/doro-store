@@ -20,7 +20,7 @@ const CORS_HEADERS = {
  * Generate a unique order ID in format DS-YYYY-XXXX
  * Uses KV to maintain a counter for the current year
  */
-async function generateOrderId(kv) {
+async function generateOrderId(kv: KVNamespace): Promise<string> {
   const year = new Date().getFullYear();
   const counterKey = `order_counter_${year}`;
   
