@@ -1,12 +1,12 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import { useMemo } from 'react'
+import { useMemo, Suspense } from 'react'
 import Link from 'next/link'
 import { getAllProducts } from '@/lib/data'
 import { ProductCard } from '@/components/product/ProductCard'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
-import { Search } from 'lucide-react'
+import { Search, Loader2 } from 'lucide-react'
 
 /**
  * Normalize Romanian text by removing diacritics
@@ -21,7 +21,7 @@ function normalizeRomanian(text: string): string {
     .replace(/[ț]/g, 't')
 }
 
-export default function SearchPage() {
+function SearchResults() {
   const searchParams = useSearchParams()
   const query = searchParams.get('q') || ''
 
@@ -39,15 +39,8 @@ export default function SearchPage() {
     })
   }, [query])
 
-  const breadcrumbItems = [
-    { label: 'Acasă', href: '/' },
-    { label: 'Căutare', href: '/search' },
-  ]
-
   return (
-    <div className="container mx-auto px-4 py-8">
-      <Breadcrumbs items={breadcrumbItems} />
-
+    <>
       {/* Search Header */}
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
@@ -109,6 +102,31 @@ export default function SearchPage() {
           )}
         </>
       )}
+    </>
+  )
+}
+
+function SearchLoading() {
+  return (
+    <div className="text-center py-16">
+      <Loader2 className="w-8 h-8 text-primary-600 mx-auto mb-4 animate-spin" />
+      <p className="text-secondary-600">Se încarcă...</p>
+    </div>
+  )
+}
+
+export default function SearchPage() {
+  const breadcrumbItems = [
+    { label: 'Acasă', href: '/' },
+    { label: 'Căutare', href: '/search' },
+  ]
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <Breadcrumbs items={breadcrumbItems} />
+      <Suspense fallback={<SearchLoading />}>
+        <SearchResults />
+      </Suspense>
     </div>
   )
 }

@@ -12,11 +12,17 @@ export function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [isClient, setIsClient] = useState(false)
   const searchInputRef = useRef<HTMLInputElement>(null)
   const router = useRouter()
   const { getItemCount } = useCartStore()
   
   const itemCount = getItemCount()
+
+  // Prevent hydration mismatch - only show cart count after client mount
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   // Focus input when search opens
   useEffect(() => {
@@ -147,7 +153,7 @@ export function Header() {
                 className="relative p-2.5 text-secondary-300 hover:text-white transition-colors"
               >
                 <ShoppingCart className="w-5 h-5" />
-                {itemCount > 0 && (
+                {isClient && itemCount > 0 && (
                   <span className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-primary-500 text-secondary-900 text-xs font-bold rounded-full flex items-center justify-center">
                     {itemCount > 99 ? '99+' : itemCount}
                   </span>
